@@ -9,10 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5425383467171907568}
-  - component: {fileID: 6182827312029268842}
-  - component: {fileID: 3813842145217797331}
+  - component: {fileID: 7750924014723540809}
   m_Layer: 0
-  m_Name: PlayerInput
+  m_Name: PlayerInstance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,16 +30,64 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1864374003413567727}
   - {fileID: 5859540958395617934}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6182827312029268842
+--- !u!114 &7750924014723540809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805649141680066155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34564111646463db34350bef89383e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 7144308219294656163}
+  inputEvents: {fileID: 0}
+--- !u!1 &4370385549638276572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1864374003413567727}
+  - component: {fileID: 7144308219294656163}
+  - component: {fileID: 5279586083727755713}
+  m_Layer: 0
+  m_Name: Input
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1864374003413567727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4370385549638276572}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5425383467171907568}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7144308219294656163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4370385549638276572}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
@@ -61,7 +108,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3813842145217797331}
+      - m_Target: {fileID: 5279586083727755713}
         m_TargetAssemblyTypeName: Input.InputEvents, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -77,7 +124,7 @@ MonoBehaviour:
     m_ActionName: 'Default/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3813842145217797331}
+      - m_Target: {fileID: 5279586083727755713}
         m_TargetAssemblyTypeName: Input.InputEvents, Assembly-CSharp
         m_MethodName: OnAction1
         m_Mode: 0
@@ -93,7 +140,7 @@ MonoBehaviour:
     m_ActionName: 'Default/Action1[/Keyboard/h]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3813842145217797331}
+      - m_Target: {fileID: 5279586083727755713}
         m_TargetAssemblyTypeName: Input.InputEvents, Assembly-CSharp
         m_MethodName: OnAction2
         m_Mode: 0
@@ -109,13 +156,13 @@ MonoBehaviour:
     m_ActionName: 'Default/Action2[/Keyboard/j]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3813842145217797331}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 5279586083727755713}
+        m_TargetAssemblyTypeName: Input.InputEvents, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -124,7 +171,19 @@ MonoBehaviour:
     m_ActionId: 31cca007-af9b-4fcd-9075-33ad08a870c7
     m_ActionName: 'Default/Action3[/Keyboard/k]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5279586083727755713}
+        m_TargetAssemblyTypeName: Input.InputEvents, Assembly-CSharp
+        m_MethodName: OnSprint
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 24ccb7b2-6695-4fdc-b37f-bfc0828c7db0
     m_ActionName: 'Default/Action4[/Keyboard/l]'
   m_NeverAutoSwitchControlSchemes: 0
@@ -132,13 +191,13 @@ MonoBehaviour:
   m_DefaultActionMap: Default
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &3813842145217797331
+--- !u!114 &5279586083727755713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1805649141680066155}
+  m_GameObject: {fileID: 4370385549638276572}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f51ff5791da1fdac48bbcaca805c1633, type: 3}
@@ -183,9 +242,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7138661471376520748}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6de922dab2914120a810c9f5b54f262b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputEvents: {fileID: 3813842145217797331}
+  inputEvents: {fileID: 5279586083727755713}
