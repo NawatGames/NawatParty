@@ -1,3 +1,4 @@
+using System;
 using Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -21,6 +22,11 @@ namespace Player
         }
 
         public int PlayerIndex { get; private set; }
+
+        private void Awake()
+        {
+            transform.parent = PlayerManager.Instance.transform;
+        }
 
         public void OnJoin()
         {
