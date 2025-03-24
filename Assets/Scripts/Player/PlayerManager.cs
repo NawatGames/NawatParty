@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -45,5 +46,7 @@ namespace Player
                 Players[i].SetPlayerIndex(i);
             }
         }
+
+        public InputEvents GetPlayerInput(int playerIndex) => Players[playerIndex].InputEvents;
     }
 }
