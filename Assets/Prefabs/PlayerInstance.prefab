@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 7144308219294656163}
-  inputEvents: {fileID: 0}
+  inputEvents: {fileID: 5279586083727755713}
 --- !u!1 &4370385549638276572
 GameObject:
   m_ObjectHideFlags: 0
