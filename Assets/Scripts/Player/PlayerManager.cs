@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using Input;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Player
 {
@@ -10,6 +12,9 @@ namespace Player
         public static PlayerManager Instance { get; private set; }
         public List<PlayerInstance> Players { get; private set; } = new List<PlayerInstance>();
         private int _playerCount = 0;
+
+        public UnityEvent<PlayerInstance> onPlayerRegister;
+        public UnityEvent<PlayerInstance> onPlayerDeregister;
 
         private void Awake()
         {
@@ -32,6 +37,8 @@ namespace Player
             Players.Add(player);
             player.SetPlayerIndex(_playerCount);
             _playerCount++;
+
+            onPlayerRegister?.Invoke(player);
         }
 
         public void UnregisterPlayer(PlayerInput playerInput)
@@ -45,6 +52,8 @@ namespace Player
             {
                 Players[i].SetPlayerIndex(i);
             }
+
+            onPlayerDeregister?.Invoke(player);
         }
 
         public InputEvents GetPlayerInput(int playerIndex) => Players[playerIndex].InputEvents;
