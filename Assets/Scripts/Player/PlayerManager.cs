@@ -4,27 +4,17 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using Utils;
 
 namespace Player
 {
-    public class PlayerManager : MonoBehaviour
+    public class PlayerManager : Singleton<PlayerManager>
     {
-        public static PlayerManager Instance { get; private set; }
         public List<PlayerInstance> Players { get; private set; } = new List<PlayerInstance>();
         private int _playerCount = 0;
 
         public UnityEvent<PlayerInstance> onPlayerRegister;
         public UnityEvent<PlayerInstance> onPlayerDeregister;
-
-        private void Awake()
-        {
-            if (Instance != null)
-            {
-                Debug.LogWarning("More than one player manager in the scene!");
-                Destroy(this);
-            }
-            Instance = this;
-        }
 
         public void RegisterPlayer(PlayerInput playerInput)
         {
