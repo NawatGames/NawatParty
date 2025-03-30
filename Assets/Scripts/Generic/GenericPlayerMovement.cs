@@ -25,15 +25,10 @@ namespace Generic
         private Vector2 _axis;
         private float _currentRotationVel = 0f;
 
-        private void OnEnable()
+        public void Initialize(PlayerInstance player)
         {
-           SetPlayerIndex(playerIndex);
-        }
-
-        private void OnDisable()
-        {
-            _playerInput.OnMoveEvent -= OnMove;
-            _playerInput.OnJumpEvent -= OnJump;
+            playerIndex = player.PlayerIndex;
+            SetPlayerIndex(playerIndex);
         }
 
         public void SetSpeed(float newSpeed)
