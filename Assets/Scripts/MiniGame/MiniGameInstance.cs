@@ -26,7 +26,6 @@ namespace MiniGame
         private void Start()
         {
             _miniGameManager.RegisterMiniGame(this);
-            MiniGameStart();
         }
 
         /// <summary>
