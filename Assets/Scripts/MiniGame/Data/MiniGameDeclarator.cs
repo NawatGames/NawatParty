@@ -16,5 +16,6 @@ namespace MiniGame.Data
         public string gameName;
         public Scene gameScene;
         public GameType gameType;
+        public MiniGameInputDeclarator inputDeclarator;
     }
 }
