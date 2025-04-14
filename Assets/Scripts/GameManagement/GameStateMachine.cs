@@ -11,6 +11,7 @@ namespace GameManagement
 
         private void Start()
         {
+            ChangeState(initialGameState);
             _currentGameState.EnterState();
         }
 
