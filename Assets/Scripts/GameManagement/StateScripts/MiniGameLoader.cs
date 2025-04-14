@@ -1,4 +1,5 @@
 using MiniGame;
+using MiniGame.Data;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;

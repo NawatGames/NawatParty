@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace MiniGame
+namespace MiniGame.Data
 {
     public enum GameType
     {
