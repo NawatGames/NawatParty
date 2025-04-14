@@ -28,6 +28,9 @@ namespace GameManagement
 
         private void OnMiniGameEnd()
         {
+            _currentMiniGameInstance.onMiniGameEnd.RemoveListener(OnMiniGameEnd);
+            _currentMiniGameInstance = null;
+
             onMiniGameEnd.Invoke();
         }
 
