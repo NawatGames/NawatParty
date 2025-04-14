@@ -17,7 +17,7 @@ namespace GameManagement
 
         private void ChangeState(GameState newState)
         {
-            _currentGameState.ExitState();
+            _currentGameState?.ExitState();
             _currentGameState = newState;
             _currentGameState.EnterState();
         }
