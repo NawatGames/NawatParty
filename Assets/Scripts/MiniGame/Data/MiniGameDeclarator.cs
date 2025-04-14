@@ -10,12 +10,23 @@ namespace MiniGame.Data
         Teams,
         OneVsAll
     }
+
+    /// <summary>
+    /// Defines a mini-game's properties
+    /// </summary>
     [CreateAssetMenu(fileName = "MiniGameDeclarator", menuName = "Scriptable Objects/MiniGameDeclarator")]
     public class MiniGameDeclarator : ScriptableObject
     {
-        public string gameName;
-        public Scene gameScene;
-        public GameType gameType;
-        public MiniGameInputDeclarator inputDeclarator;
+        // Editor Fields
+        [SerializeField] private string gameName;
+        [SerializeField] private Scene gameScene;
+        [SerializeField] private GameType gameType;
+        [SerializeField] private MiniGameInputDeclarator inputDeclarator;
+
+        // Getters
+        public string GameName => gameName;
+        public Scene GameScene => gameScene;
+        public GameType GameType => gameType;
+        public MiniGameInputDeclarator InputDeclarator => inputDeclarator;
     }
 }

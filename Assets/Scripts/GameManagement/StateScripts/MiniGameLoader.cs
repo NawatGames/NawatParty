@@ -21,14 +21,14 @@ namespace GameManagement.StateScripts
             MiniGameDeclarator currentMiniGame = MiniGameManager.Instance.CurrentMiniGame;
             if (!currentMiniGame) Debug.LogError("Trying to enter a MiniGame without setting a game declarator");
 
-            SceneManager.LoadScene(currentMiniGame.gameScene.name);
+            SceneManager.LoadScene(currentMiniGame.GameScene.name);
         }
 
         protected override void OnStateExit()
         {
             MiniGameDeclarator currentMiniGame = MiniGameManager.Instance.CurrentMiniGame;
 
-            Scene currentMiniGameScene = SceneManager.GetSceneByPath(currentMiniGame.gameScene.path);
+            Scene currentMiniGameScene = SceneManager.GetSceneByPath(currentMiniGame.GameScene.path);
             SceneManager.UnloadSceneAsync(currentMiniGameScene);
 
             SceneManager.SetActiveScene(gameObject.scene);
@@ -36,7 +36,7 @@ namespace GameManagement.StateScripts
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            if (scene.path != MiniGameManager.Instance.CurrentMiniGame.gameScene.path) return;
+            if (scene.path != MiniGameManager.Instance.CurrentMiniGame.GameScene.path) return;
             onMiniGameLoaded.Invoke();
             SceneManager.SetActiveScene(scene);
         }
