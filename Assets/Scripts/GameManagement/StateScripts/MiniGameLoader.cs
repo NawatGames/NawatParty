@@ -1,5 +1,6 @@
 using MiniGame;
 using MiniGame.Data;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -28,7 +29,7 @@ namespace GameManagement.StateScripts
         {
             MiniGameDeclarator currentMiniGame = MiniGameManager.Instance.CurrentMiniGame;
 
-            Scene currentMiniGameScene = SceneManager.GetSceneByPath(currentMiniGame.GameScene.path);
+            Scene currentMiniGameScene = SceneManager.GetSceneByName(currentMiniGame.GameScene.name);
             SceneManager.UnloadSceneAsync(currentMiniGameScene);
 
             SceneManager.SetActiveScene(gameObject.scene);
@@ -36,7 +37,7 @@ namespace GameManagement.StateScripts
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            if (scene.path != MiniGameManager.Instance.CurrentMiniGame.GameScene.path) return;
+            if (scene.name != MiniGameManager.Instance.CurrentMiniGame.GameScene.name) return;
             onMiniGameLoaded.Invoke();
             SceneManager.SetActiveScene(scene);
         }

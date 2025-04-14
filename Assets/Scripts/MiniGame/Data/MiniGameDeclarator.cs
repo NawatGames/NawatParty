@@ -1,5 +1,5 @@
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace MiniGame.Data
 {
@@ -19,13 +19,13 @@ namespace MiniGame.Data
     {
         // Editor Fields
         [SerializeField] private string gameName;
-        [SerializeField] private Scene gameScene;
+        [SerializeField] private SceneAsset gameScene;
         [SerializeField] private GameType gameType;
         [SerializeField] private MiniGameInputDeclarator inputDeclarator;
 
         // Getters
         public string GameName => gameName;
-        public Scene GameScene => gameScene;
+        public SceneAsset GameScene => gameScene;
         public GameType GameType => gameType;
         public MiniGameInputDeclarator InputDeclarator => inputDeclarator;
     }
