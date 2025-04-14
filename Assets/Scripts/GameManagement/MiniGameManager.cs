@@ -14,6 +14,8 @@ namespace GameManagement
         public UnityEvent onMiniGameStart;
         public UnityEvent onMiniGameEnd;
 
+        private MiniGameInstance _currentMiniGameInstance;
+
         public void SetMiniGame(MiniGameDeclarator miniGame)
         {
             CurrentMiniGame = miniGame;
@@ -27,6 +29,12 @@ namespace GameManagement
         private void OnMiniGameEnd()
         {
             onMiniGameEnd.Invoke();
+        }
+
+        public void RegisterMiniGame(MiniGameInstance game)
+        {
+            _currentMiniGameInstance = game;
+            _currentMiniGameInstance.onMiniGameEnd.AddListener(OnMiniGameEnd);
         }
     }
 }
