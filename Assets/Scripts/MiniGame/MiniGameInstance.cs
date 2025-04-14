@@ -43,7 +43,7 @@ namespace MiniGame
         /// </summary>
         protected virtual void MiniGameEnd(bool[] winners)
         {
-            if (winners.Length != PlayerManager.Instance.Players.Count)
+            if (winners.Length != PlayerManager.Instance.PlayerCount)
             {
                 Debug.LogError("Players count mismatch");
                 return;

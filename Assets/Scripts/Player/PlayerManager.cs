@@ -11,7 +11,9 @@ namespace Player
     public class PlayerManager : Singleton<PlayerManager>
     {
         public List<PlayerInstance> Players { get; private set; } = new List<PlayerInstance>();
+
         private int _playerCount = 0;
+        public int PlayerCount => _playerCount;
 
         public UnityEvent<PlayerInstance> onPlayerRegister;
         public UnityEvent<PlayerInstance> onPlayerDeregister;
