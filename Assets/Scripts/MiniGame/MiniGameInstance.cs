@@ -1,4 +1,5 @@
 using GameManagement;
+using Player;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,7 +10,7 @@ namespace MiniGame
         private MiniGameManager _miniGameManager;
 
         public UnityEvent onMiniGameStart;
-        public UnityEvent onMiniGameEnd;
+        public UnityEvent<bool[]> onMiniGameEnd;
 
         private void OnEnable()
         {
@@ -36,10 +37,18 @@ namespace MiniGame
 
         /// <summary>
         /// This function is called when a mini-game is finished. Use it to end the current mini-game
+        /// <param name="winners">
+        /// Array of booleans, indicates which players have won the game
+        /// </param>
         /// </summary>
-        protected virtual void MiniGameEnd()
+        protected virtual void MiniGameEnd(bool[] winners)
         {
-            onMiniGameEnd.Invoke();
+            if (winners.Length != PlayerManager.Instance.Players.Count)
+            {
+                Debug.LogError("Players count mismatch");
+                return;
+            }
+            onMiniGameEnd.Invoke(winners);
         }
     }
 }
