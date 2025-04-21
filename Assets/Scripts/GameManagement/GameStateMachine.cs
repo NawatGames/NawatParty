@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Utils;
 
@@ -8,6 +9,17 @@ namespace GameManagement
         [SerializeField] private GameState initialGameState;
 
         private GameState _currentGameState;
+        public Dictionary<string, GameState> States { get; private set; }
+
+        protected override void Awake()
+        {
+            base.Awake();
+            States = new Dictionary<string, GameState>();
+            foreach (GameState state in GetComponentsInChildren<GameState>())
+            {
+                States.Add(state.name, state);
+            }
+        }
 
         private void Start()
         {
@@ -15,7 +27,7 @@ namespace GameManagement
             _currentGameState.EnterState();
         }
 
-        private void ChangeState(GameState newState)
+        public void ChangeState(GameState newState)
         {
             _currentGameState?.ExitState();
             _currentGameState = newState;
