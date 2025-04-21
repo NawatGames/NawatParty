@@ -1,6 +1,4 @@
-using MiniGame;
 using MiniGame.Data;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -10,6 +8,8 @@ namespace GameManagement.StateScripts
     public class MiniGameLoader : StateScript
     {
         public UnityEvent onMiniGameLoaded;
+
+        private Scene _oldScene;
 
         protected override void OnEnable()
         {
@@ -22,7 +22,13 @@ namespace GameManagement.StateScripts
             MiniGameDeclarator currentMiniGame = MiniGameManager.Instance.CurrentMiniGame;
             if (!currentMiniGame) Debug.LogError("Trying to enter a MiniGame without setting a game declarator");
 
-            SceneManager.LoadScene(currentMiniGame.GameScene.name);
+            // Disable old scene objects
+            _oldScene = SceneManager.GetActiveScene();
+            GameObject[] oldSceneGameObjects = _oldScene.GetRootGameObjects();
+            foreach (GameObject oldSceneGameObject in oldSceneGameObjects) oldSceneGameObject.SetActive(false);
+
+            // Load Scene
+            SceneManager.LoadSceneAsync(currentMiniGame.GameScene.name, LoadSceneMode.Additive);
         }
 
         protected override void OnStateExit()
@@ -32,7 +38,7 @@ namespace GameManagement.StateScripts
             Scene currentMiniGameScene = SceneManager.GetSceneByName(currentMiniGame.GameScene.name);
             SceneManager.UnloadSceneAsync(currentMiniGameScene);
 
-            SceneManager.SetActiveScene(gameObject.scene);
+            SceneManager.SetActiveScene(_oldScene);
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
