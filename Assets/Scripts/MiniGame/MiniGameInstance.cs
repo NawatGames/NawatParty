@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using GameManagement;
 using Player;
 using UnityEngine;
@@ -10,7 +11,8 @@ namespace MiniGame
         private MiniGameManager _miniGameManager;
 
         public UnityEvent onMiniGameStart;
-        public UnityEvent<bool[]> onMiniGameEnd;
+        public UnityEvent<Dictionary<int,bool>> onMiniGameEnd;
+        protected List<PlayerInstance> Players;
 
         private void OnEnable()
         {
@@ -23,9 +25,9 @@ namespace MiniGame
             _miniGameManager.onMiniGameStart.RemoveListener(MiniGameStart);
         }
 
-        private void Start()
+        private void Awake()
         {
-            _miniGameManager.RegisterMiniGame(this);
+            Players = _miniGameManager.RegisterMiniGame(this);
         }
 
         /// <summary>
@@ -40,13 +42,8 @@ namespace MiniGame
         /// Array of booleans, indicates which players have won the game
         /// </param>
         /// </summary>
-        protected virtual void MiniGameEnd(bool[] winners)
+        protected virtual void MiniGameEnd(Dictionary<int,bool> winners)
         {
-            if (winners.Length != PlayerManager.Instance.PlayerCount)
-            {
-                Debug.LogError("Players count mismatch");
-                return;
-            }
             onMiniGameEnd.Invoke(winners);
         }
     }
