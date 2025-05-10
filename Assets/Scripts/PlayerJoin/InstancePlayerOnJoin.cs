@@ -10,7 +10,7 @@ namespace PlayerJoin
 
         [SerializeField] private GameObject playerPrefab;
 
-        private void OnEnable()
+        private void Start()
         {
             _playerManager = PlayerManager.Instance;
             _playerManager.onPlayerRegister.AddListener(OnPlayerJoin);
