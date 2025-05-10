@@ -14,7 +14,7 @@ namespace MiniGame.Data
     /// <summary>
     /// Defines a mini-game's properties
     /// </summary>
-    [CreateAssetMenu(fileName = "MiniGameDeclarator", menuName = "Scriptable Objects/MiniGameDeclarator")]
+    [CreateAssetMenu(fileName = "MiniGameDeclarator", menuName = "Scriptable Objects/MiniGame/MiniGameDeclarator")]
     public class MiniGameDeclarator : ScriptableObject
     {
         // Editor Fields

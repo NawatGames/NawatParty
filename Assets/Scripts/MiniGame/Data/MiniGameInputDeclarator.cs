@@ -12,7 +12,7 @@ namespace MiniGame.Data
     /// <summary>
     /// Defines a mini-game's input mapping
     /// </summary>
-    [CreateAssetMenu(fileName = "MiniGameInputDeclarator", menuName = "Scriptable Objects/MiniGameInputDeclarator")]
+    [CreateAssetMenu(fileName = "MiniGameInputDeclarator", menuName = "Scriptable Objects/MiniGame/MiniGameInputDeclarator")]
     public class MiniGameInputDeclarator : ScriptableObject
     {
         // Editor Fields
