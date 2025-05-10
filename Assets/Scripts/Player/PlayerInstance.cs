@@ -1,5 +1,6 @@
 using System;
 using Input;
+using Player.Model;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,7 @@ namespace Player
     {
         [SerializeField] private PlayerInput playerInput;
         [SerializeField] private InputEvents inputEvents;
+        [SerializeField] private PlayerModelDeclarator playerModel;
 
         public PlayerInput PlayerInput{
             get { return playerInput; }
@@ -19,6 +21,12 @@ namespace Player
         {
             get { return inputEvents; }
             private set { inputEvents = value; }
+        }
+
+        public PlayerModelDeclarator PlayerModel
+        {
+            get { return playerModel; }
+            private set { playerModel = value; }
         }
 
         public int PlayerIndex { get; private set; }
