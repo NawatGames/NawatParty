@@ -2,7 +2,7 @@ using Generic;
 using Player;
 using UnityEngine;
 
-namespace PlayerJoin
+namespace TestingScene
 {
     public class InstancePlayerOnJoin : MonoBehaviour
     {
