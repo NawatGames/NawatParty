@@ -26,7 +26,6 @@ namespace Generic
         private InputEvents _playerInput;
 
         private Vector2 _axis;
-        private float _currentRotationVel = 0f;
 
         private Vector3 _camDirection;
 
@@ -85,9 +84,8 @@ namespace Generic
 
             // Rotate player according to movement
             if(_axis.sqrMagnitude == 0) return;
-            float targetAngle = Mathf.Atan2(_axis.x, _axis.y) * Mathf.Rad2Deg;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _currentRotationVel, .05f);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            Quaternion targetAngle = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetAngle, Time.deltaTime * 10f);
         }
 
         public bool IsGrounded() => Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, playerHeight);
