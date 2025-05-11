@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f9c60e4459762b48c428378ee089ee, type: 3}
+  m_Name: ButtonMasherMinigame
+  m_EditorClassIdentifier: 
+  gameName: Button Mash
+  gameDescription: Press the indicated as fast as you can. Player with most presses
+    wins
+  gameScene: {fileID: 102900000, guid: 1ee1835f8b8997daca8e15966c206d38, type: 3}
+  gameType: 0
+  inputDeclarator: {fileID: 11400000, guid: a3dd7680c6df54c2992c4a4c4ad1a1d4, type: 2}
