@@ -103,6 +103,7 @@ MonoBehaviour:
   canJump: 0
   playerHeight: 1.5
   jumpMultiplier: 1
+  animator: {fileID: 2883907249898160459}
 --- !u!1001 &3285063663813919487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -163,5 +164,10 @@ PrefabInstance:
 --- !u!4 &1692664875113503902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4245608308150885985, guid: 961ccc4732cfcf291be58a657fd1a0bd, type: 3}
+  m_PrefabInstance: {fileID: 3285063663813919487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2883907249898160459 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 401754549896250292, guid: 961ccc4732cfcf291be58a657fd1a0bd, type: 3}
   m_PrefabInstance: {fileID: 3285063663813919487}
   m_PrefabAsset: {fileID: 0}
