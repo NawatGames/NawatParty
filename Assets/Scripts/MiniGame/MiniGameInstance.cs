@@ -11,7 +11,7 @@ namespace MiniGame
         private MiniGameManager _miniGameManager;
 
         public UnityEvent onMiniGameStart;
-        public UnityEvent<Dictionary<int,bool>> onMiniGameEnd;
+        public UnityEvent<Dictionary<int,int>> onMiniGameEnd;
         protected List<PlayerInstance> Players;
 
         private void OnEnable()
@@ -42,9 +42,9 @@ namespace MiniGame
         /// Array of booleans, indicates which players have won the game
         /// </param>
         /// </summary>
-        protected virtual void MiniGameEnd(Dictionary<int,bool> winners)
+        protected virtual void MiniGameEnd(Dictionary<int,int> scores)
         {
-            onMiniGameEnd.Invoke(winners);
+            onMiniGameEnd.Invoke(scores);
         }
     }
 }
