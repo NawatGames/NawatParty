@@ -29,7 +29,7 @@ namespace GameManagement
             onMiniGameStart.Invoke();
         }
 
-        private void OnMiniGameEnd(Dictionary<int, bool> winners)
+        private void OnMiniGameEnd(Dictionary<int, int> winners)
         {
             _currentMiniGameInstance.onMiniGameEnd.RemoveListener(OnMiniGameEnd);
             _currentMiniGameInstance = null;
