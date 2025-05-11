@@ -21,7 +21,7 @@ namespace Generic
         [SerializeField] private float jumpMultiplier = 1f;
 
         [SerializeField] private Animator animator;
-        private bool isWalking = false;
+        private bool _isWalking = false;
 
         private InputEvents _playerInput;
 
@@ -64,19 +64,18 @@ namespace Generic
             _axis = axis;
             if (axis == Vector2.zero)
             {
-                isWalking = false;
+                _isWalking = false;
                 animator.Play("Idle");
             }
-            else if (!isWalking)
+            else if (!_isWalking)
             {
-                isWalking = true;
+                _isWalking = true;
                 animator.Play("Walking_A");
             }
         }
 
         private void Update()
         {
-
             // Update player speed
             Vector3 direction = _camDirection * _axis.y + Vector3.Cross(_camDirection, Vector3.up) * -_axis.x;
             rb.linearVelocity = new Vector3(0f,rb.linearVelocity.y,0f);
