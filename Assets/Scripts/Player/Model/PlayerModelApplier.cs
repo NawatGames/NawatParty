@@ -18,11 +18,13 @@ namespace Player.Model
 
         private void Awake()
         {
-            if(initialModelDeclarator) LoadModel(initialModelDeclarator);
+            LoadModel(initialModelDeclarator);
         }
 
         public void LoadModel(PlayerModelDeclarator declarator)
         {
+            if (!declarator) return;
+
             // Set Head
             headMeshRenderer.sharedMesh = declarator.headPart;
             headMeshRenderer.material.mainTexture = declarator.headTexture2D;
