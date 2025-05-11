@@ -20,6 +20,9 @@ namespace Generic
         [SerializeField] private float playerHeight = 1.5f;
         [SerializeField] private float jumpMultiplier = 1f;
 
+        [SerializeField] private Animator animator;
+        private bool isWalking = false;
+
         private InputEvents _playerInput;
 
         private Vector2 _axis;
@@ -60,6 +63,16 @@ namespace Generic
         private void OnMove(InputAction.CallbackContext context, Vector2 axis)
         {
             _axis = axis;
+            if (axis == Vector2.zero)
+            {
+                isWalking = false;
+                animator.Play("Idle");
+            }
+            else if (!isWalking)
+            {
+                isWalking = true;
+                animator.Play("Walking_A");
+            }
         }
 
         private void Update()
