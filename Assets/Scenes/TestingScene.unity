@@ -1749,7 +1749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerCounter: {fileID: 1837879879}
   minigameStateName: MiniGameState
-  miniGameDeclarator: {fileID: 11400000, guid: 3d1b7aa771f8569d889995410a3c8a65, type: 2}
+  miniGameDeclarator: {fileID: 0}
 --- !u!4 &1015297714
 Transform:
   m_ObjectHideFlags: 0
@@ -2782,9 +2782,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5429d0997481ee1568c906020bb8a65e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1570719672}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5429d0997481ee1568c906020bb8a65e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1570719676}
   m_SourcePrefab: {fileID: 100100000, guid: 5429d0997481ee1568c906020bb8a65e, type: 3}
 --- !u!1 &1570719671 stripped
 GameObject:
@@ -2817,21 +2814,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5429d0997481ee1568c906020bb8a65e, type: 3}
   m_PrefabInstance: {fileID: 1570719670}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1570719676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570719671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a082ce687068f89827bab63d8ac1a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerCounter: {fileID: 1837879879}
-  minigameStateName: MiniGameState
-  miniGameDeclarator: {fileID: 0}
 --- !u!1001 &1622577394
 PrefabInstance:
   m_ObjectHideFlags: 0
