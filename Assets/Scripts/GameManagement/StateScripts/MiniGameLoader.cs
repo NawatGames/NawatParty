@@ -45,8 +45,8 @@ namespace GameManagement.StateScripts
         {
             // Check if loaded scene is the mini-game's scene
             MiniGameDeclarator currentMiniGame = MiniGameManager.Instance.CurrentMiniGame;
-            if (currentMiniGame && scene.name != currentMiniGame.GameScene.name) return;
-
+            if (!currentMiniGame || scene.name != currentMiniGame.GameScene.name) return;
+            Debug.Log(currentMiniGame.GameScene.name);
             onMiniGameLoaded.Invoke();
             SceneManager.SetActiveScene(scene);
         }
