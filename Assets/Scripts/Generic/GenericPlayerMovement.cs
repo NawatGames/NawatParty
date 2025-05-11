@@ -25,6 +25,15 @@ namespace Generic
         private Vector2 _axis;
         private float _currentRotationVel = 0f;
 
+        private Vector3 _camDirection;
+
+        private void Awake()
+        {
+            _camDirection = Camera.main.transform.forward;
+            _camDirection.y = 0f;
+            _camDirection = _camDirection.normalized;
+        }
+
         public void Initialize(PlayerInstance player)
         {
             playerIndex = player.PlayerIndex;
@@ -55,9 +64,11 @@ namespace Generic
 
         private void Update()
         {
+
             // Update player speed
-            rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
-            rb.linearVelocity += new Vector3(_axis.x, 0f, _axis.y).normalized * moveSpeed;
+            Vector3 direction = _camDirection * _axis.y + Vector3.Cross(_camDirection, Vector3.up) * -_axis.x;
+            rb.linearVelocity = new Vector3(0f,rb.linearVelocity.y,0f);
+            rb.linearVelocity += direction.normalized * moveSpeed;
 
             // Rotate player according to movement
             if(_axis.sqrMagnitude == 0) return;
