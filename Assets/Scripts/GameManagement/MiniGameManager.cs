@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using GameManagement.StateScripts;
 using MiniGame;
@@ -6,12 +8,15 @@ using UnityEngine;
 using UnityEngine.Events;
 using Utils;
 using Player;
+using Random = UnityEngine.Random;
 
 namespace GameManagement
 {
     public class MiniGameManager : Singleton<MiniGameManager>
     {
         [SerializeField] private MiniGameLoader miniGameLoader;
+
+        [SerializeField] private GameObject countdownPrefab;
         public MiniGameDeclarator CurrentMiniGame { get; private set; }
 
         public UnityEvent onMiniGameStart;
@@ -19,15 +24,32 @@ namespace GameManagement
 
         private MiniGameInstance _currentMiniGameInstance;
 
+        private void OnEnable()
+        {
+            miniGameLoader.onMiniGameLoaded.AddListener(StartMiniGameCountdown);
+        }
+
+        private void OnDisable()
+        {
+            miniGameLoader.onMiniGameLoaded.RemoveListener(StartMiniGameCountdown);
+        }
+
         public void SetMiniGame(MiniGameDeclarator miniGame)
         {
             CurrentMiniGame = miniGame;
         }
 
-        [ContextMenu("Start MiniGame")]
-        private void StartMiniGame()
+        private void StartMiniGameCountdown()
         {
+            StartCoroutine(CountdownCoroutine());
+        }
+
+        private IEnumerator CountdownCoroutine()
+        {
+            MiniGameCountdown miniGameCountdown = Instantiate(countdownPrefab).GetComponent<MiniGameCountdown>();
+            yield return miniGameCountdown.Countdown();
             onMiniGameStart.Invoke();
+            Destroy(miniGameCountdown.gameObject);
         }
 
         private void OnMiniGameEnd(Dictionary<int, int> winners)
