@@ -50,10 +50,7 @@ MonoBehaviour:
   rightArmMeshRenderer: {fileID: 2762185582159666290}
   leftLegMeshRenderer: {fileID: 7565757813292553708}
   rightLegMeshRenderer: {fileID: 6240168268952786062}
-  headMesh: {fileID: -7512971173401551960, guid: f1e66e385e7449f5499c0534c6ec1f54, type: 3}
-  bodyMesh: {fileID: 2613797618117627391, guid: 866afbd40f98ddd4594cfc346271dbfc, type: 3}
-  armMesh: {fileID: -1237890851465606483, guid: f547090bb5219e9fbbeae2939758f07c, type: 3}
-  legMesh: {fileID: 4683227298853060704, guid: c83d4fb18aa92df7094ab84e5ec92b1f, type: 3}
+  initialModelDeclarator: {fileID: 0}
 --- !u!1001 &4423052972095355274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,6 +118,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 958bdd73dac4a1659950412ca3995861, type: 3}
       propertyPath: m_Name
       value: PlayerBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 958bdd73dac4a1659950412ca3995861, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3680723932289504619, guid: 958bdd73dac4a1659950412ca3995861, type: 3}
       propertyPath: m_Mesh
