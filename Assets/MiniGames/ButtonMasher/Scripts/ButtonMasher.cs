@@ -18,7 +18,7 @@ namespace MiniGames.ButtonMasher.Scripts
             {
                 PlayerPressCounter counter  = playerPressCounters[player.PlayerIndex];
                 // Setup miniGame scripts
-                counter.enabled = true;
+                counter.gameObject.SetActive(true);
                 counter.Setup(player);
                 // Load player model
                 counter.gameObject.GetComponentInChildren<PlayerModelApplier>().LoadModel(player.PlayerModel);
