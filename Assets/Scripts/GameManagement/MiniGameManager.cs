@@ -24,6 +24,7 @@ namespace GameManagement
             CurrentMiniGame = miniGame;
         }
 
+        [ContextMenu("Start MiniGame")]
         private void StartMiniGame()
         {
             onMiniGameStart.Invoke();
