@@ -5,6 +5,7 @@ using Generic;
 using MiniGame.Data;
 using Player;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 namespace TestingScene
 {
@@ -23,6 +24,7 @@ namespace TestingScene
         {
             MiniGameManager.Instance.SetMiniGame(miniGameDeclarator);
             _miniGameState = GameStateMachine.Instance.States[minigameStateName];
+            SceneManager.SetActiveScene(gameObject.scene);
         }
 
         private void OnEnable()

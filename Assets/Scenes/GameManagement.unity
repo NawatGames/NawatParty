@@ -411,6 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   miniGameLoader: {fileID: 2070630321}
+  countdownPrefab: {fileID: 4091100742235395296, guid: c26dac0d9b6c93a43b52dc25e20cf9fd, type: 3}
   onMiniGameStart:
     m_PersistentCalls:
       m_Calls: []
