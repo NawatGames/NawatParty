@@ -14,20 +14,20 @@ namespace MiniGame
         public UnityEvent<Dictionary<int,int>> onMiniGameEnd;
         protected List<PlayerInstance> Players;
 
-        private void OnEnable()
+        private void Awake()
         {
             _miniGameManager = MiniGameManager.Instance;
+            Players = _miniGameManager.RegisterMiniGame(this);
+        }
+
+        private void OnEnable()
+        {
             _miniGameManager.onMiniGameStart.AddListener(MiniGameStart);
         }
 
         private void OnDisable()
         {
             _miniGameManager.onMiniGameStart.RemoveListener(MiniGameStart);
-        }
-
-        private void Awake()
-        {
-            Players = _miniGameManager.RegisterMiniGame(this);
         }
 
         /// <summary>
