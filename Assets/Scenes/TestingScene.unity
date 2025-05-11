@@ -1749,9 +1749,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerCounter: {fileID: 1837879879}
   minigameStateName: MiniGameState
-  fixedScenesList:
-  - {fileID: 102900000, guid: ce6f887694fa4f64d8ff9368909d5549, type: 3}
-  - {fileID: 102900000, guid: 9c91894de5821bf71b867afa6568142c, type: 3}
   miniGameDeclarator: {fileID: 11400000, guid: 3d1b7aa771f8569d889995410a3c8a65, type: 2}
 --- !u!4 &1015297714
 Transform:
@@ -1903,7 +1900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38073979fd884957b74d610e3ad05208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 1800629702795301916, guid: 4001dfe86ee95537d90029832816261d, type: 3}
+  playerPrefab: {fileID: 3172534853980410183, guid: b184732c7a801ee83a64ac6443019757, type: 3}
 --- !u!1001 &1153565280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2785,6 +2782,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5429d0997481ee1568c906020bb8a65e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1570719672}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5429d0997481ee1568c906020bb8a65e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1570719676}
   m_SourcePrefab: {fileID: 100100000, guid: 5429d0997481ee1568c906020bb8a65e, type: 3}
 --- !u!1 &1570719671 stripped
 GameObject:
@@ -2817,6 +2817,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5429d0997481ee1568c906020bb8a65e, type: 3}
   m_PrefabInstance: {fileID: 1570719670}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1570719676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570719671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a082ce687068f89827bab63d8ac1a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerCounter: {fileID: 1837879879}
+  minigameStateName: MiniGameState
+  miniGameDeclarator: {fileID: 0}
 --- !u!1001 &1622577394
 PrefabInstance:
   m_ObjectHideFlags: 0
