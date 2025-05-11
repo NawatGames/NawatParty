@@ -2,16 +2,16 @@ using System;
 using Input;
 using Player;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace MiniGames.ButtonMasher.Scripts
 {
     public class PlayerPressCounter : MonoBehaviour
     {
-        [SerializeField] private Animator animator;
-
         private InputEvents _inputEvents;
         public int Count { get; private set; }
+        public UnityEvent onPress;
 
         public void Setup(PlayerInstance instance)
         {
@@ -28,6 +28,7 @@ namespace MiniGames.ButtonMasher.Scripts
         {
             if (!ctx.started) return;
             Count++;
+            onPress.Invoke();
         }
     }
 }
