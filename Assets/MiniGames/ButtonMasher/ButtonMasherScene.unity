@@ -1390,7 +1390,7 @@ MonoBehaviour:
   onMiniGameEnd:
     m_PersistentCalls:
       m_Calls: []
-  gameDuration: 120
+  gameDuration: 10
   playerPressCounters:
   - {fileID: 1720179482163832637}
   - {fileID: 950616348}
