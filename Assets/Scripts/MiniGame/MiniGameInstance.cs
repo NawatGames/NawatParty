@@ -11,7 +11,7 @@ namespace MiniGame
         private MiniGameManager _miniGameManager;
 
         public UnityEvent onMiniGameStart;
-        public UnityEvent<Dictionary<int,int>> onMiniGameEnd;
+        public UnityEvent<Dictionary<PlayerInstance,int>> onMiniGameEnd;
         protected List<PlayerInstance> Players;
 
         private void Awake()
@@ -31,18 +31,18 @@ namespace MiniGame
         }
 
         /// <summary>
-        /// This function is called when the game scene finishes loading.
-        /// Use it for MiniGame setup like instancing players, setting variables, etc...
+        /// This function is called when the game scene is about to start.
+        /// Use it for MiniGame behaviour like enabling player movement, starting miniGame timer, etc...
         /// </summary>
         protected abstract void MiniGameStart();
 
         /// <summary>
         /// This function is called when a mini-game is finished. Use it to end the current mini-game
         /// <param name="winners">
-        /// Array of booleans, indicates which players have won the game
+        /// Dictionary of playerInstances and integers, indicates each player's score
         /// </param>
         /// </summary>
-        protected virtual void MiniGameEnd(Dictionary<int,int> scores)
+        protected virtual void MiniGameEnd(Dictionary<PlayerInstance,int> scores)
         {
             onMiniGameEnd.Invoke(scores);
         }

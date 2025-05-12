@@ -17,7 +17,7 @@
                 {
                     "name": "Action1",
                     "type": "Button",
-                    "id": "8fdb6230-e8d3-483d-90b8-3ed86cc602fb",
+                    "id": "31cca007-af9b-4fcd-9075-33ad08a870c7",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -26,25 +26,25 @@
                 {
                     "name": "Action2",
                     "type": "Button",
-                    "id": "97bb483b-0615-44d3-8097-0eaacb585cce",
+                    "id": "8fdb6230-e8d3-483d-90b8-3ed86cc602fb",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "31cca007-af9b-4fcd-9075-33ad08a870c7",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Sprint",
+                    "name": "Action3",
                     "type": "Button",
                     "id": "24ccb7b2-6695-4fdc-b37f-bfc0828c7db0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Action4",
+                    "type": "Button",
+                    "id": "97bb483b-0615-44d3-8097-0eaacb585cce",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -55,28 +55,6 @@
                 {
                     "name": "",
                     "id": "17fb66d6-be74-4175-b569-856c606c7e7f",
-                    "path": "<Keyboard>/h",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard",
-                    "action": "Action1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "94cb5cf3-5a9b-4e50-b5e9-47c344bf039a",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Controller",
-                    "action": "Action1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b64f8943-7b1d-462d-a82f-320f206cb39a",
                     "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
@@ -87,8 +65,8 @@
                 },
                 {
                     "name": "",
-                    "id": "d5dea045-b0a7-4090-8c05-4c3f10ce2436",
-                    "path": "<Gamepad>/buttonNorth",
+                    "id": "94cb5cf3-5a9b-4e50-b5e9-47c344bf039a",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
@@ -98,12 +76,34 @@
                 },
                 {
                     "name": "",
-                    "id": "661dcdd7-b157-4238-a088-9a560df12623",
-                    "path": "<Keyboard>/space",
+                    "id": "b64f8943-7b1d-462d-a82f-320f206cb39a",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "Jump",
+                    "action": "Action4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5dea045-b0a7-4090-8c05-4c3f10ce2436",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "Action4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "661dcdd7-b157-4238-a088-9a560df12623",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Action1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -114,18 +114,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
-                    "action": "Jump",
+                    "action": "Action1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "5959947f-3463-41ab-8ae4-4dc599c868ee",
-                    "path": "<Keyboard>/leftShift",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "Sprint",
+                    "action": "Action3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -136,7 +136,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
-                    "action": "Sprint",
+                    "action": "Action3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

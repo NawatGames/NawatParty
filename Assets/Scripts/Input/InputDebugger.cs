@@ -11,28 +11,28 @@ namespace Input
         private void OnEnable()
         {
             inputEvents.OnMoveEvent += OnAxisEvent;
-            inputEvents.OnJumpEvent += OnButtonEvent;
-            inputEvents.OnSprintEvent += OnButtonEvent;
             inputEvents.OnAction1Event += OnButtonEvent;
             inputEvents.OnAction2Event += OnButtonEvent;
+            inputEvents.OnAction3Event += OnButtonEvent;
+            inputEvents.OnAction4Event += OnButtonEvent;
         }
 
         private void OnDisable()
         {
             inputEvents.OnMoveEvent -= OnAxisEvent;
-            inputEvents.OnJumpEvent -= OnButtonEvent;
-            inputEvents.OnSprintEvent -= OnButtonEvent;
             inputEvents.OnAction1Event -= OnButtonEvent;
             inputEvents.OnAction2Event -= OnButtonEvent;
+            inputEvents.OnAction3Event -= OnButtonEvent;
+            inputEvents.OnAction4Event -= OnButtonEvent;
         }
 
-        private void OnButtonEvent(InputAction.CallbackContext context)
+        private static void OnButtonEvent(InputAction.CallbackContext context)
         {
             string actionName = context.action.name;
             Debug.Log($"Button pressed: {actionName}, phase: {context.phase.ToString()}");
         }
 
-        private void OnAxisEvent(InputAction.CallbackContext context, Vector2 value)
+        private static void OnAxisEvent(InputAction.CallbackContext context, Vector2 value)
         {
             string actionName = context.action.name;
             Debug.Log($"Axis event: {actionName}, axisValue: {value}");

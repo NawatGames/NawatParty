@@ -52,11 +52,11 @@ namespace Generic
             if (_playerInput)
             {
                 _playerInput.OnMoveEvent -= OnMove;
-                _playerInput.OnJumpEvent -= OnJump;
+                _playerInput.OnAction1Event -= OnJump;
             }
             _playerInput = PlayerManager.Instance.GetPlayerInput(newPlayerIndex);
             _playerInput.OnMoveEvent += OnMove;
-            _playerInput.OnJumpEvent += OnJump;
+            _playerInput.OnAction1Event += OnJump;
         }
 
         private void OnMove(InputAction.CallbackContext context, Vector2 axis)
