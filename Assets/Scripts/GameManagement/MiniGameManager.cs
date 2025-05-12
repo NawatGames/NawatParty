@@ -52,7 +52,7 @@ namespace GameManagement
             Destroy(miniGameCountdown.gameObject);
         }
 
-        private void OnMiniGameEnd(Dictionary<int, int> winners)
+        private void OnMiniGameEnd(Dictionary<PlayerInstance, int> winners)
         {
             _currentMiniGameInstance.onMiniGameEnd.RemoveListener(OnMiniGameEnd);
             _currentMiniGameInstance = null;
