@@ -11,19 +11,19 @@ namespace Input
         private void OnEnable()
         {
             inputEvents.OnMoveEvent += OnAxisEvent;
-            inputEvents.OnJumpEvent += OnButtonEvent;
-            inputEvents.OnSprintEvent += OnButtonEvent;
             inputEvents.OnAction1Event += OnButtonEvent;
             inputEvents.OnAction2Event += OnButtonEvent;
+            inputEvents.OnAction3Event += OnButtonEvent;
+            inputEvents.OnAction4Event += OnButtonEvent;
         }
 
         private void OnDisable()
         {
             inputEvents.OnMoveEvent -= OnAxisEvent;
-            inputEvents.OnJumpEvent -= OnButtonEvent;
-            inputEvents.OnSprintEvent -= OnButtonEvent;
             inputEvents.OnAction1Event -= OnButtonEvent;
             inputEvents.OnAction2Event -= OnButtonEvent;
+            inputEvents.OnAction3Event -= OnButtonEvent;
+            inputEvents.OnAction4Event -= OnButtonEvent;
         }
 
         private void OnButtonEvent(InputAction.CallbackContext context)

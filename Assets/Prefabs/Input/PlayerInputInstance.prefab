@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 7144308219294656163}
   inputEvents: {fileID: 5279586083727755713}
+  playerModel: {fileID: 0}
 --- !u!1 &4370385549638276572
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +127,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5279586083727755713}
         m_TargetAssemblyTypeName: Input.InputEvents, Assembly-CSharp
-        m_MethodName: OnAction1
+        m_MethodName: OnAction2
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -142,7 +143,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5279586083727755713}
         m_TargetAssemblyTypeName: Input.InputEvents, Assembly-CSharp
-        m_MethodName: OnAction2
+        m_MethodName: OnAction4
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -158,7 +159,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5279586083727755713}
         m_TargetAssemblyTypeName: Input.InputEvents, Assembly-CSharp
-        m_MethodName: OnJump
+        m_MethodName: OnAction1
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -174,7 +175,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5279586083727755713}
         m_TargetAssemblyTypeName: Input.InputEvents, Assembly-CSharp
-        m_MethodName: OnSprint
+        m_MethodName: OnAction3
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -186,6 +187,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 24ccb7b2-6695-4fdc-b37f-bfc0828c7db0
     m_ActionName: 'Default/Action4[/Keyboard/l]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dfaa90bd-8e41-4445-bf69-1c1ec289d722
+    m_ActionName: 'PlayerSelection/Enter[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f7ce621a-2ef2-474b-97b3-d60a22a63605
+    m_ActionName: 'PlayerSelection/Exit[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Default
