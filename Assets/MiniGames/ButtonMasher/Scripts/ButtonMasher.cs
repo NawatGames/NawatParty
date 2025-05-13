@@ -21,7 +21,7 @@ namespace MiniGames.ButtonMasher.Scripts
                 counter.gameObject.SetActive(true);
                 counter.Setup(player);
                 // Load player model
-                counter.gameObject.GetComponentInChildren<PlayerModelApplier>().LoadModel(player.PlayerModel);
+                counter.gameObject.GetComponentInChildren<PlayerInit>().Init(player);
             }
 
             StartCoroutine(WaitGameTime());
