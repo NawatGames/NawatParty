@@ -35,10 +35,10 @@ namespace MiniGames.ButtonMasher.Scripts
 
         private void CalculateScore()
         {
-            Dictionary<int, int> score = new();
+            Dictionary<PlayerInstance, int> score = new();
             foreach (PlayerInstance player in Players)
             {
-                score.Add(player.PlayerIndex, playerPressCounters[player.PlayerIndex].Count);
+                score.Add(player, playerPressCounters[player.PlayerIndex].Count);
             }
             MiniGameEnd(score);
         }
