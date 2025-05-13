@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f9c60e4459762b48c428378ee089ee, type: 3}
   m_Name: MiniGameDeclarator
   m_EditorClassIdentifier: 
-  gameName: 
-  gameDescription: 
-  gameScene: {fileID: 0}
+  gameName: RhythmRecall
+  gameDescription: Watch. Remember. Repeat. Match the rhythm sequence exactly as
+    shown. Miss a note and you're out! Only one can stay in sync 'til the end!
+  gameScene: {fileID: 102900000, guid: bf47e4374a6da0146b1e4d7354a15c09, type: 3}
   gameType: 0
-  inputDeclarator: {fileID: 0}
+  inputDeclarator: {fileID: 11400000, guid: 05a7839a589c1404da762dc46fc91df8, type: 2}

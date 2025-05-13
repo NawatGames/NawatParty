@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198e51813b7e89cf4b7095ff79fc6db3, type: 3}
   m_Name: MiniGameInputDeclarator
   m_EditorClassIdentifier: 
-  axisType: 0
+  axisType: 2
   axisDescription: 
-  northButtonDescription: 
-  southButtonDescription: 
-  eastButtonDescription: 
-  westButtonDescription: 
+  northButtonDescription: Red Note
+  southButtonDescription: Blue Note
+  eastButtonDescription: Yellow Note
+  westButtonDescription: Green Note
