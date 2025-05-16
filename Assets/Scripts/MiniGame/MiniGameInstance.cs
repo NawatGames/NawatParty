@@ -53,7 +53,7 @@ namespace MiniGame
         /// Dictionary of playerInstances and integers, indicates each player's score
         /// </param>
         /// </summary>
-        protected virtual void MiniGameEnd(Dictionary<PlayerInstance,int> scores)
+        protected void MiniGameEnd(Dictionary<PlayerInstance,int> scores)
         {
             onMiniGameEnd.Invoke(scores);
         }
