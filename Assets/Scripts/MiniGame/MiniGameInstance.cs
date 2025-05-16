@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using GameManagement;
 using Player;
@@ -19,7 +20,6 @@ namespace MiniGame
             _miniGameManager = MiniGameManager.Instance;
             Players = _miniGameManager.RegisterMiniGame(this);
         }
-
         private void OnEnable()
         {
             _miniGameManager.onMiniGameStart.AddListener(MiniGameStart);
@@ -29,6 +29,17 @@ namespace MiniGame
         {
             _miniGameManager.onMiniGameStart.RemoveListener(MiniGameStart);
         }
+
+        private void Start()
+        {
+            MiniGameSetup();
+        }
+
+        /// <summary>
+        /// This function is called when the game scene finishes loading.
+        /// Use it for miniGame setup like spawning objects, map generation, setting variables, etc
+        /// </summary>
+        protected abstract void MiniGameSetup();
 
         /// <summary>
         /// This function is called when the game scene is about to start.
