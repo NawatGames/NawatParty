@@ -1,0 +1,3 @@
+[submodule "Assets/Externos"]
+	path = Assets/Externos
+	url = https://gitlab.com/nawatparty_temp/NawatParty.git
